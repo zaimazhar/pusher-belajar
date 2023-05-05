@@ -14,14 +14,13 @@ class ReceivedClick implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $click;
-
     /**
      * Create a new event instance.
      */
-    public function __construct()
+    public function __construct(
+        public ?string $messageFromAdmin = ''
+    )
     {
-        ray('dapat')->blue();
     }
 
     /**

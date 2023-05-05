@@ -45,6 +45,9 @@
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                     Live Update Will Be Here
                                 </p>
+                                <div id="live-update">
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,10 +59,17 @@
 
 <script>
     window.onload = function () {    
+        let liveUpdate = document.getElementById("live-update");
+
         Echo.private('click')
             .listen('ReceivedClick', (e) => {
-                console.log(e)
-                console.log('Received an update!')
+                let p = document.createElement('p')
+
+                p.innerText = `Admin: ${e.messageFromAdmin}`
+
+                liveUpdate.appendChild(p)
+
+                console.log(`Admin: ${e.messageFromAdmin}`)
             })
     }
 </script>

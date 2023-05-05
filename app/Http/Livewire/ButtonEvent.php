@@ -7,8 +7,10 @@ use Livewire\Component;
 
 class ButtonEvent extends Component
 {
+    public ?string $adminMessage = '';
+
     public function updateClick() {
-        ReceivedClick::dispatch();
+        ReceivedClick::dispatch($this->adminMessage);
     }
 
     public function render()
