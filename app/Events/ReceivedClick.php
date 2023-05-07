@@ -31,7 +31,7 @@ class ReceivedClick implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('click'),
+            new Channel('click'),
         ];
     }
 }

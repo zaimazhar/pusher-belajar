@@ -61,7 +61,7 @@
     window.onload = function () {    
         let liveUpdate = document.getElementById("live-update");
 
-        Echo.private('click')
+        Echo.channel('click')
             .listen('ReceivedClick', (e) => {
                 let p = document.createElement('p')
 
